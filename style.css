@@ -18,7 +18,6 @@
     --color-infobox-bg: #F8F0E6;   /* info box background */
     --color-footer-txt: #A09090;   /* footer body text */
     --color-hlavicka-bg:    #2C2424;   /* hlavicka fallback / dark band */
-    --color-lead-light: #C8B8B0;   /* lead text on dark sections */
 
     /* Naše barvy */
     --barva-1: #E8D960;
@@ -83,13 +82,7 @@ strong { font-weight: 500; }
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background:
-        linear-gradient(to bottom, rgba(26,18,16,0.45) 0%, rgba(26,18,16,0.25) 60%, rgba(26,18,16,0.55) 100%),
-        url("img/hlavicka.jpg") center / cover no-repeat; */
     background-color: var(--color-hlavicka-bg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     text-align: center;
     padding: 40px 24px;
 }
@@ -99,10 +92,9 @@ strong { font-weight: 500; }
 .hlavicka-photo {
     width: 200px;
     height: 200px;
+    display: block;
     margin: 0 auto 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
 }
 
 .hlavicka h1 {
@@ -176,7 +168,6 @@ strong { font-weight: 500; }
     line-height: 1.9;
     margin-bottom: 1.5rem;
 }
-.lead.light { color: var(--color-lead-light); }
 
 /* ── Úvod split layout ── */
 .uvod-split {
@@ -188,7 +179,10 @@ strong { font-weight: 500; }
 }
 
 .uvod-photo {
+    width: 100%;
     height: 280px;
+    display: block;
+    object-fit: cover;
 }
 
 /* ── Color palette swatch ── */
@@ -196,12 +190,6 @@ strong { font-weight: 500; }
     border-top: 1px solid var(--color-divider);
     padding-top: 2.5rem;
     text-align: center;
-}
-
-.color-intro {
-    font-size: 0.9rem;
-    color: var(--color-muted);
-    margin-bottom: 1rem;
 }
 
 .color-swatch-strip {
@@ -230,7 +218,10 @@ strong { font-weight: 500; }
 }
 
 .harmonogram-photo {
+    width: 100%;
     height: 480px;
+    display: block;
+    object-fit: cover;
 }
 
 /* ── Karty událostí (obřad / hostina) ── */
@@ -539,7 +530,6 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 
 /* ── RSVP dark text overrides ── */
 .section-dark h2.light { color: var(--color-ivory); }
-.section-dark .lead.light strong { color: var(--color-gold-light); }
 
 /* ── Responsive ── */
 @media (max-width: 720px) {
