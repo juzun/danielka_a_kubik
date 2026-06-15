@@ -425,8 +425,10 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 
 .footer-photo {
     height: 250px;
-    margin: 0 auto 2rem;
+    width: auto;
+    max-width: 100%;
     display: block;
+    margin: 0 auto 2rem;
 }
 
 .footer-monogram {
@@ -496,7 +498,7 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
     }
 
     .timeline::before { left: 60px; }
-    .timeline-time { width: 60px; font-size: 0.95rem; }
+    .timeline-time { width: 60px; }
 
     .site-nav a { padding: 12px 10px; font-size: 0.65rem; }
 }
