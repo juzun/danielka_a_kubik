@@ -1,23 +1,23 @@
 :root {
-    /* Core palette */
-    --color-ivory:      #FAF7F2;   /* page background, lightest sections */
-    --color-cream:      #F0E8DC;   /* alternate section background */
-    --color-gold:       #B8966E;   /* accent – buttons, tags, highlights */
-    --color-gold-light: #D4B48A;   /* lighter gold – hlavicka rule, ampersand */
-    --color-dark:       #2C2424;   /* headings, dark sections */
-    --color-charcoal:   #1A1210;   /* footer background */
-    --color-mid:        #7A6B6B;   /* secondary text, nav links */
-    --color-muted:      #5A4E4E;   /* lead paragraph text */
-    --color-subtle:     #9A8A8A;   /* addresses, small labels */
-    --color-faint:      #6A5B5B;   /* info box text */
-    --color-fallback:   #9A8A80;   /* form fallback text */
-    --color-nav-border: #E2D8CC;   /* sticky nav border */
-    --color-timeline:   #D4C4B4;   /* timeline vertical line */
-    --color-divider:    #E8DDD3;   /* timeline item dividers */
-    --color-placeholder:#E8DDD3;   /* image placeholder background */
-    --color-infobox-bg: #F8F0E6;   /* info box background */
-    --color-footer-txt: #A09090;   /* footer body text */
-    --color-hlavicka-bg:    #2C2424;   /* hlavicka fallback / dark band */
+    /* Backgrounds */
+    --color-ivory:    #FAF7F2;   /* page background */
+    --color-cream:    #F0E8DC;   /* alternate sections */
+
+    /* Accent */
+    --color-gold:       #916a3e;   /* buttons, tags, links */
+    --color-gold-light: #D4B48A;   /* ampersand, rule, footer links */
+
+    /* Darks */
+    --color-dark:     #2C2424;   /* headings, dark section bg, hlavicka */
+    --color-charcoal: #1A1210;   /* footer background */
+
+    /* Text */
+    --color-text-secondary: #7A6B6B;   /* nav links, body secondary */
+    --color-text-muted:     #473b3b;   /* lead paragraphs, timeline times */
+    --color-text-light:     #9A8A8A;   /* addresses, labels, footer */
+
+    /* Borders & dividers */
+    --color-border:   rgb(231, 211, 187);
 
     /* Naše barvy */
     --barva-1: #E8D960;
@@ -82,7 +82,7 @@ strong { font-weight: 500; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-hlavicka-bg);
+    background-color: var(--color-dark);
     text-align: center;
     padding: 40px 24px;
 }
@@ -139,7 +139,7 @@ strong { font-weight: 500; }
     top: 0;
     z-index: 100;
     background: var(--color-ivory);
-    border-bottom: 1px solid var(--color-nav-border);
+    border-bottom: 1px solid var(--color-border);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -154,7 +154,7 @@ strong { font-weight: 500; }
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-mid);
+    color: var(--color-text-secondary);
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -164,7 +164,7 @@ strong { font-weight: 500; }
 /* ── Lead text ── */
 .lead {
     font-size: 1.05rem;
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     line-height: 1.9;
     margin-bottom: 1.5rem;
 }
@@ -187,7 +187,7 @@ strong { font-weight: 500; }
 
 /* ── Color palette swatch ── */
 .color-palette-section {
-    border-top: 1px solid var(--color-divider);
+    border-top: 1px solid var(--color-border);
     padding-top: 2.5rem;
     text-align: center;
 }
@@ -207,7 +207,6 @@ strong { font-weight: 500; }
 .swatch-3 { background: var(--barva-3); }
 .swatch-4 { background: var(--barva-4); }
 .swatch-5 { background: var(--barva-5); }
-
 
 /* ── Harmonogram layout ── */
 .harmonogram-layout {
@@ -235,31 +234,23 @@ strong { font-weight: 500; }
 .event-card-reverse { direction: rtl; }
 .event-card-reverse > * { direction: ltr; }
 
-.event-time {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    margin-bottom: 0.4rem;
-}
-
 .event-address {
-    font-size: 0.85rem;
-    color: var(--color-subtle);
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     margin-bottom: 1rem;
 }
 
 .event-note {
-    font-size: 0.85rem;
-    color: var(--color-subtle);
+    font-size: 0.9rem;
     font-style: italic;
 }
 
 .event-map iframe {
     width: 100%;
-    height: 340px;
+    height: 400px;
     border: none;
     border-radius: 2px;
     display: block;
@@ -310,22 +301,8 @@ strong { font-weight: 500; }
     top: 0;
     bottom: 0;
     width: 1px;
-    background: var(--color-timeline);
+    background: var(--color-border);
 }
-
-.timeline-place {
-    list-style: none;
-    padding-left: 122px; /* 90px time + 32px gap */
-    padding-top: 1.5rem;
-    padding-bottom: 0.25rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--color-gold);
-    letter-spacing: 0.04em;
-}
-.timeline-place:first-child { padding-top: 0; }
-.timeline-place + .timeline-item { border-top: none; }
 
 .timeline-item {
     display: flex;
@@ -335,32 +312,22 @@ strong { font-weight: 500; }
     position: relative;
 }
 
-.timeline-item + .timeline-item { border-top: 1px solid var(--color-divider); }
+.timeline-item + .timeline-item { border-top: 1px solid var(--color-border); }
 
 .timeline-time {
     flex-shrink: 0;
     width: 90px;
-    text-align: right;
+    text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--color-gold);
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
     padding-top: 2px;
+    font-weight: bold;
 }
 
 .timeline-body { flex: 1; }
 .timeline-body strong { font-weight: 500; display: block; margin-bottom: 0.15rem; }
-.timeline-body p { font-size: 0.9rem; color: var(--color-mid); margin: 0; }
-
-/* ── Info box ── */
-.info-box {
-    border-left: 3px solid var(--color-gold);
-    padding: 16px 20px;
-    background: var(--color-infobox-bg);
-    font-size: 0.9rem;
-    color: var(--color-faint);
-    margin-top: 1.5rem;
-}
-.info-box p { margin: 0; }
+.timeline-body p { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; }
 
 /* ── Trips ── */
 .trips-grid {
@@ -390,7 +357,7 @@ strong { font-weight: 500; }
 .trip-card p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: var(--color-mid);
+    color: var(--color-text-secondary);
 }
 
 .trip-category {
@@ -404,7 +371,7 @@ strong { font-weight: 500; }
 
 .trip-address {
     font-size: 0.82rem;
-    color: var(--color-subtle);
+    color: var(--color-text-light);
     letter-spacing: 0.04em;
     margin-top: 0.5rem;
     margin-bottom: 0;
@@ -428,13 +395,13 @@ strong { font-weight: 500; }
     margin-top: 1.2rem;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--color-fallback);
+    color: var(--color-text-light);
 }
 
 /* ── Footer ── */
 footer {
     background: var(--color-charcoal);
-    color: var(--color-footer-txt);
+    color: var(--color-text-light);
     text-align: center;
     padding: 60px 24px;
     font-size: 0.9rem;
@@ -451,34 +418,15 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-footer-txt);
+    color: var(--color-text-light);
     opacity: 0.6;
     margin-bottom: 1.5rem;
 }
 
 .footer-photo {
-    margin: 0 auto 2rem;
-    width: 200px;
     height: 250px;
-}
-
-.footer-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-photo-placeholder p {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
-    margin: 0;
+    margin: 0 auto 2rem;
+    display: block;
 }
 
 .footer-monogram {
@@ -505,7 +453,7 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
     font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-footer-txt);
+    color: var(--color-text-light);
     opacity: 0.55;
     margin-bottom: 0.15rem;
 }
@@ -525,7 +473,7 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 }
 
 .footer-email { margin-top: 1.5rem; }
-.footer-email a { color: var(--color-footer-txt); opacity: 0.7; font-size: 0.85rem; }
+.footer-email a { color: var(--color-text-light); opacity: 0.7; font-size: 0.85rem; }
 .footer-email a:hover { opacity: 1; color: var(--color-gold-light); }
 
 /* ── RSVP dark text overrides ── */
@@ -549,7 +497,6 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 
     .timeline::before { left: 60px; }
     .timeline-time { width: 60px; font-size: 0.95rem; }
-    .timeline-place { padding-left: 92px; }
 
     .site-nav a { padding: 12px 10px; font-size: 0.65rem; }
 }
