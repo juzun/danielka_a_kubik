@@ -76,6 +76,45 @@ strong { font-weight: 500; }
 .section-cream  { background: var(--color-cream);  padding: 80px 0; }
 .section-dark   { background: var(--color-dark);   padding: 80px 0; }
 
+
+.hlavicka-photo {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto 1.8rem;
+    object-fit: cover;
+}
+
+.footer-photo {
+    height: 250px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 2rem;
+}
+
+.uvod-photo {
+    width: 100%;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+}
+
+.harmonogram-photo {
+    width: 100%;
+    height: 480px;
+    display: block;
+    object-fit: cover;
+}
+
+.cimrman-photo {
+    height: 230px;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
 /* ── HLAVIČKA ── */
 .hlavicka {
     min-height: 100vh;
@@ -88,14 +127,6 @@ strong { font-weight: 500; }
 }
 
 .hlavicka-content { color: var(--color-ivory); }
-
-.hlavicka-photo {
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 0 auto 1.8rem;
-    object-fit: cover;
-}
 
 .hlavicka h1 {
     color: var(--color-ivory);
@@ -178,13 +209,6 @@ strong { font-weight: 500; }
     margin-bottom: 4rem;
 }
 
-.uvod-photo {
-    width: 100%;
-    height: 280px;
-    display: block;
-    object-fit: cover;
-}
-
 /* ── Color palette swatch ── */
 .color-palette-section {
     border-top: 1px solid var(--color-border);
@@ -214,13 +238,6 @@ strong { font-weight: 500; }
     grid-template-columns: 1fr 2fr;
     gap: 48px;
     align-items: start;
-}
-
-.harmonogram-photo {
-    width: 100%;
-    height: 480px;
-    display: block;
-    object-fit: cover;
 }
 
 /* ── Karty událostí (obřad / hostina) ── */
@@ -330,14 +347,14 @@ strong { font-weight: 500; }
 .timeline-body p { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; }
 
 /* ── Trips ── */
-.trips-grid {
+.tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.trip-card {
+.tip-card {
     background: white;
     padding: 25px;
     border-radius: 8px;
@@ -345,22 +362,22 @@ strong { font-weight: 500; }
     transition: transform 0.3s ease;
 }
 
-.trip-card:hover { transform: translateY(-5px); }
+.tip-card:hover { transform: translateY(-5px); }
 
-.trip-card h3 {
+.tip-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     margin-bottom: 10px;
     color: var(--color-dark);
 }
 
-.trip-card p {
+.tip-card p {
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--color-text-secondary);
 }
 
-.trip-category {
+.tip-category {
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -369,7 +386,7 @@ strong { font-weight: 500; }
     margin-bottom: 0.3rem;
 }
 
-.trip-address {
+.tip-address {
     font-size: 0.82rem;
     color: var(--color-text-light);
     letter-spacing: 0.04em;
@@ -421,14 +438,6 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
     color: var(--color-text-light);
     opacity: 0.6;
     margin-bottom: 1.5rem;
-}
-
-.footer-photo {
-    height: 250px;
-    width: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto 2rem;
 }
 
 .footer-monogram {
