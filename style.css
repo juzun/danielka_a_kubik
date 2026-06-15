@@ -1,14 +1,9 @@
-/* ═══════════════════════════════════════════════════
-   Jakub & Daniela – Wedding Website
-   ─ To change the look, edit the variables below ─
-   ═══════════════════════════════════════════════════ */
-
 :root {
     /* Core palette */
     --color-ivory:      #FAF7F2;   /* page background, lightest sections */
     --color-cream:      #F0E8DC;   /* alternate section background */
     --color-gold:       #B8966E;   /* accent – buttons, tags, highlights */
-    --color-gold-light: #D4B48A;   /* lighter gold – hero rule, ampersand */
+    --color-gold-light: #D4B48A;   /* lighter gold – hlavicka rule, ampersand */
     --color-dark:       #2C2424;   /* headings, dark sections */
     --color-charcoal:   #1A1210;   /* footer background */
     --color-mid:        #7A6B6B;   /* secondary text, nav links */
@@ -20,12 +15,17 @@
     --color-timeline:   #D4C4B4;   /* timeline vertical line */
     --color-divider:    #E8DDD3;   /* timeline item dividers */
     --color-placeholder:#E8DDD3;   /* image placeholder background */
-    --color-gallery-ph: #E0D4C8;   /* gallery placeholder background */
     --color-infobox-bg: #F8F0E6;   /* info box background */
     --color-footer-txt: #A09090;   /* footer body text */
-    --color-hero-bg:    #2C2424;   /* hero fallback / dark band */
-    --color-couple-bg:  #3A2E2E;   /* couple photo band */
+    --color-hlavicka-bg:    #2C2424;   /* hlavicka fallback / dark band */
     --color-lead-light: #C8B8B0;   /* lead text on dark sections */
+
+    /* Naše barvy */
+    --barva-1: #E8D960;
+    --barva-2: #FEFFA6;
+    --barva-3: #F8FAE8;
+    --barva-4: #A68965;
+    --barva-5: #614228;
 }
 
 /* ── Reset & Base ── */
@@ -77,49 +77,35 @@ strong { font-weight: 500; }
 .section-cream  { background: var(--color-cream);  padding: 80px 0; }
 .section-dark   { background: var(--color-dark);   padding: 80px 0; }
 
-/* ── Section tag ── */
-.section-tag {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    margin-bottom: 0.6rem;
-}
-.section-tag.light { color: var(--color-gold-light); }
-
-/* ── HERO ── */
-.hero {
+/* ── HLAVIČKA ── */
+.hlavicka {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     /* background:
         linear-gradient(to bottom, rgba(26,18,16,0.45) 0%, rgba(26,18,16,0.25) 60%, rgba(26,18,16,0.55) 100%),
-        url("img/hero.jpg") center / cover no-repeat; */
-    background-color: var(--color-hero-bg); /* fallback when no photo */
-    background-size: contain; /* The whole image will always be visible */
+        url("img/hlavicka.jpg") center / cover no-repeat; */
+    background-color: var(--color-hlavicka-bg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
     padding: 40px 24px;
 }
 
-.hero-content { color: var(--color-ivory); }
+.hlavicka-content { color: var(--color-ivory); }
 
-.hero-eyebrow {
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    opacity: 0.85;
-    margin-bottom: 1.2rem;
+.hlavicka-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero h1 {
+.hlavicka h1 {
     color: var(--color-ivory);
     letter-spacing: 0.06em;
     margin-bottom: 1rem;
@@ -131,14 +117,14 @@ strong { font-weight: 500; }
     color: var(--color-gold-light);
 }
 
-.hero-rule {
+.hlavicka-rule {
     width: 60px;
     height: 1px;
     background: var(--color-gold-light);
     margin: 1.2rem auto;
 }
 
-.hero-date {
+.hlavicka-date {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-style: italic;
@@ -147,7 +133,7 @@ strong { font-weight: 500; }
     opacity: 0.95;
 }
 
-.hero-places {
+.hlavicka-places {
     font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -155,7 +141,7 @@ strong { font-weight: 500; }
     margin-bottom: 0;
 }
 
-/* ── NAV ── */
+/* ── NAVIGACE ── */
 .site-nav {
     position: sticky;
     top: 0;
@@ -192,51 +178,62 @@ strong { font-weight: 500; }
 }
 .lead.light { color: var(--color-lead-light); }
 
-/* ── Couple photo band ── */
-.photo-band { background: var(--color-hero-bg); }
-
-.photo-placeholder {
-    background: var(--color-placeholder);
-    display: flex;
+/* ── Úvod split layout ── */
+.uvod-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    margin-bottom: 4rem;
 }
 
-.couple-photo {
-    width: 100%;
-    height: 480px;
-    background: var(--color-couple-bg)
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 20px,
-            rgba(255,255,255,0.02) 20px,
-            rgba(255,255,255,0.02) 40px
-        );
+.uvod-photo {
+    height: 280px;
 }
 
-.placeholder-inner {
+/* ── Color palette swatch ── */
+.color-palette-section {
+    border-top: 1px solid var(--color-divider);
+    padding-top: 2.5rem;
     text-align: center;
-    color: rgba(255,255,255,0.35);
 }
 
-.placeholder-inner p {
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
+.color-intro {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
 }
 
-.placeholder-icon {
-    display: block;
-    font-size: 2.5rem;
-    line-height: 1;
+.color-swatch-strip {
+    display: flex;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.placeholder-inner.small .placeholder-icon { font-size: 1.8rem; }
+.swatch { flex: 1; }
+.swatch-1 { background: var(--barva-1); }
+.swatch-2 { background: var(--barva-2); }
+.swatch-3 { background: var(--barva-3); }
+.swatch-4 { background: var(--barva-4); }
+.swatch-5 { background: var(--barva-5); }
 
-/* ── Event cards (ceremony / party) ── */
+
+/* ── Harmonogram layout ── */
+.harmonogram-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.harmonogram-photo {
+    height: 480px;
+}
+
+/* ── Karty událostí (obřad / hostina) ── */
 .event-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -261,6 +258,12 @@ strong { font-weight: 500; }
     color: var(--color-subtle);
     letter-spacing: 0.08em;
     margin-bottom: 1rem;
+}
+
+.event-note {
+    font-size: 0.85rem;
+    color: var(--color-subtle);
+    font-style: italic;
 }
 
 .event-map iframe {
@@ -319,6 +322,20 @@ strong { font-weight: 500; }
     background: var(--color-timeline);
 }
 
+.timeline-place {
+    list-style: none;
+    padding-left: 122px; /* 90px time + 32px gap */
+    padding-top: 1.5rem;
+    padding-bottom: 0.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-gold);
+    letter-spacing: 0.04em;
+}
+.timeline-place:first-child { padding-top: 0; }
+.timeline-place + .timeline-item { border-top: none; }
+
 .timeline-item {
     display: flex;
     gap: 32px;
@@ -354,6 +371,54 @@ strong { font-weight: 500; }
 }
 .info-box p { margin: 0; }
 
+/* ── Trips ── */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.trip-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.trip-card:hover { transform: translateY(-5px); }
+
+.trip-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.trip-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-mid);
+}
+
+.trip-category {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 0.3rem;
+}
+
+.trip-address {
+    font-size: 0.82rem;
+    color: var(--color-subtle);
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
 /* ── RSVP section ── */
 .form-container {
     margin-top: 2.5rem;
@@ -375,22 +440,6 @@ strong { font-weight: 500; }
     color: var(--color-fallback);
 }
 
-/* ── Gallery ── */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 220px;
-    gap: 8px;
-    margin-top: 2rem;
-}
-
-.gi { border-radius: 2px; }
-.gi-wide { grid-column: span 2; }
-.gi-tall { grid-row: span 2; }
-
-.gallery-grid .photo-placeholder { background: var(--color-gallery-ph); }
-.gallery-grid .placeholder-inner { color: rgba(90,70,60,0.35); }
-
 /* ── Footer ── */
 footer {
     background: var(--color-charcoal);
@@ -399,6 +448,46 @@ footer {
     padding: 60px 24px;
     font-size: 0.9rem;
     line-height: 2;
+}
+
+footer a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+}
+footer a:hover { color: var(--color-ivory); text-decoration: none; }
+
+.footer-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-footer-txt);
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-photo {
+    margin: 0 auto 2rem;
+    width: 200px;
+    height: 250px;
+}
+
+.footer-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-photo-placeholder p {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin: 0;
 }
 
 .footer-monogram {
@@ -411,11 +500,42 @@ footer {
 
 .footer-monogram span { font-style: italic; }
 
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 48px;
+    margin: 1.8rem 0;
+}
+
+.contact-group { text-align: center; }
+
+.contact-role {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-footer-txt);
+    opacity: 0.55;
+    margin-bottom: 0.15rem;
+}
+
+.contact-group a { font-size: 0.92rem; }
+
+.contact-tbd {
+    color: rgba(160, 144, 144, 0.35);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
 .footer-small {
-    font-size: 0.8rem;
-    opacity: 0.6;
+    font-size: 0.78rem;
+    opacity: 0.5;
     margin-top: 0.4rem;
 }
+
+.footer-email { margin-top: 1.5rem; }
+.footer-email a { color: var(--color-footer-txt); opacity: 0.7; font-size: 0.85rem; }
+.footer-email a:hover { opacity: 1; color: var(--color-gold-light); }
 
 /* ── RSVP dark text overrides ── */
 .section-dark h2.light { color: var(--color-ivory); }
@@ -423,6 +543,14 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 720px) {
+    .uvod-split {
+        grid-template-columns: 1fr;
+    }
+
+    .harmonogram-layout {
+        grid-template-columns: 1fr;
+    }
+
     .event-card,
     .event-card-reverse {
         grid-template-columns: 1fr;
@@ -431,53 +559,7 @@ footer {
 
     .timeline::before { left: 60px; }
     .timeline-time { width: 60px; font-size: 0.95rem; }
-
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 160px;
-    }
-    .gi-wide { grid-column: span 2; }
-    .gi-tall { grid-row: auto; }
+    .timeline-place { padding-left: 92px; }
 
     .site-nav a { padding: 12px 10px; font-size: 0.65rem; }
-
-    .couple-photo { height: 280px; }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gi-wide { grid-column: span 1; }
-}
-
-
-.trips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.trip-card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.trip-card:hover {
-    transform: translateY(-5px);
-}
-
-.trip-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: var(--color-dark);
-}
-
-.trip-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-mid);
 }
