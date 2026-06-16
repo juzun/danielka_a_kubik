@@ -25,6 +25,9 @@
     --barva-3: #F8FAE8;
     --barva-4: #A68965;
     --barva-5: #614228;
+
+    /* Fonts */
+    --fancy-font: 'Cormorant Garamond', serif;
 }
 
 /* ── Reset & Base ── */
@@ -43,7 +46,7 @@ body {
 
 /* ── Typography ── */
 h1, h2, h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--fancy-font);
     font-weight: 400;
     line-height: 1.2;
     color: var(--color-dark);
@@ -71,49 +74,17 @@ strong { font-weight: 500; }
 .centered { text-align: center; }
 .section-header { margin-bottom: 3rem; }
 
+.photo {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
 /* ── Section backgrounds ── */
 .section-light  { background: var(--color-ivory);  padding: 80px 0; }
 .section-cream  { background: var(--color-cream);  padding: 80px 0; }
 .section-dark   { background: var(--color-dark);   padding: 80px 0; }
-
-
-.hlavicka-photo {
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 0 auto 1.8rem;
-    object-fit: cover;
-}
-
-.footer-photo {
-    height: 250px;
-    width: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto 2rem;
-}
-
-.uvod-photo {
-    width: 100%;
-    height: 280px;
-    display: block;
-    object-fit: cover;
-}
-
-.harmonogram-photo {
-    width: 100%;
-    height: 480px;
-    display: block;
-    object-fit: cover;
-}
-
-.cimrman-photo {
-    height: 230px;
-    width: auto;
-    display: block;
-    object-fit: cover;
-}
-
 
 /* ── HLAVIČKA ── */
 .hlavicka {
@@ -148,7 +119,7 @@ strong { font-weight: 500; }
 }
 
 .hlavicka-date {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--fancy-font);
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-style: italic;
     letter-spacing: 0.05em;
@@ -190,7 +161,11 @@ strong { font-weight: 500; }
     transition: color 0.2s;
 }
 
-.site-nav a:hover { color: var(--color-gold); text-decoration: none; }
+.site-nav a:hover {
+    color: var(--color-ivory);
+    background: var(--color-gold-light);
+    text-decoration: none;
+}
 
 /* ── Lead text ── */
 .lead {
@@ -232,12 +207,19 @@ strong { font-weight: 500; }
 .swatch-4 { background: var(--barva-4); }
 .swatch-5 { background: var(--barva-5); }
 
-/* ── Harmonogram layout ── */
-.harmonogram-layout {
+/* ── Split layout ── */
+.split-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 48px;
     align-items: start;
+}
+
+.split-layout-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
 }
 
 /* ── Karty událostí (obřad / hostina) ── */
@@ -258,11 +240,6 @@ strong { font-weight: 500; }
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
-}
-
-.event-note {
-    font-size: 0.9rem;
-    font-style: italic;
 }
 
 .event-map iframe {
@@ -289,20 +266,6 @@ strong { font-weight: 500; }
     transition: background 0.2s, color 0.2s;
 }
 .button-outline:hover { background: var(--color-gold); color: var(--color-ivory); text-decoration: none; }
-
-.button-ghost {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 1px solid rgba(212,180,138,0.6);
-    color: var(--color-gold-light);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
-.button-ghost:hover { background: var(--color-gold-light); color: var(--color-dark); text-decoration: none; }
 
 /* ── Timeline ── */
 .timeline {
@@ -335,7 +298,7 @@ strong { font-weight: 500; }
     flex-shrink: 0;
     width: 90px;
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--fancy-font);
     font-size: 1.5rem;
     color: var(--color-text-muted);
     padding-top: 2px;
@@ -365,7 +328,7 @@ strong { font-weight: 500; }
 .tip-card:hover { transform: translateY(-5px); }
 
 .tip-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--fancy-font);
     font-size: 1.6rem;
     margin-bottom: 10px;
     color: var(--color-dark);
@@ -375,15 +338,6 @@ strong { font-weight: 500; }
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--color-text-secondary);
-}
-
-.tip-category {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-    margin-bottom: 0.3rem;
 }
 
 .tip-address {
@@ -403,16 +357,10 @@ strong { font-weight: 500; }
 .form-container iframe {
     width: 100%;
     border: none;
+    margin-bottom: 1.5rem;
     border-radius: 2px;
     background: white;
     display: block;
-}
-
-.form-fallback {
-    margin-top: 1.2rem;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
 }
 
 /* ── Footer ── */
@@ -432,16 +380,15 @@ footer a {
 footer a:hover { color: var(--color-ivory); text-decoration: none; }
 
 .footer-label {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-text-light);
-    opacity: 0.6;
     margin-bottom: 1.5rem;
 }
 
 .footer-monogram {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--fancy-font);
     font-size: 2.5rem;
     font-weight: 300;
     color: var(--color-gold-light);
@@ -461,11 +408,10 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 .contact-group { text-align: center; }
 
 .contact-role {
-    font-size: 0.62rem;
+    font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-text-light);
-    opacity: 0.55;
     margin-bottom: 0.15rem;
 }
 
@@ -478,25 +424,22 @@ footer a:hover { color: var(--color-ivory); text-decoration: none; }
 }
 
 .footer-small {
-    font-size: 0.78rem;
-    opacity: 0.5;
+    font-size: 0.9rem;
     margin-top: 0.4rem;
 }
 
 .footer-email { margin-top: 1.5rem; }
-.footer-email a { color: var(--color-text-light); opacity: 0.7; font-size: 0.85rem; }
-.footer-email a:hover { opacity: 1; color: var(--color-gold-light); }
+.footer-email a { color: var(--color-text-light); font-size: 0.9rem; }
+.footer-email a:hover { color: var(--color-gold-light); }
 
-/* ── RSVP dark text overrides ── */
-.section-dark h2.light { color: var(--color-ivory); }
 
 /* ── Responsive ── */
 @media (max-width: 720px) {
-    .uvod-split {
+    .split-layout-center {
         grid-template-columns: 1fr;
     }
 
-    .harmonogram-layout {
+    .split-layout {
         grid-template-columns: 1fr;
     }
 

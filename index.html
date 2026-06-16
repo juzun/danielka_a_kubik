@@ -16,7 +16,7 @@
 <!-- ═══════════════════════ HLAVIČKA ═══════════════════════ -->
 <header class="hlavicka">
     <div class="hlavicka-content">
-        <img class="hlavicka-photo" src="img/favicon.png">
+        <img class="photo" style="max-height:200px" src="img/favicon.png">
         <h1>Daniela <span class="ampersand">&amp;</span> Jakub</h1>
         <div class="hlavicka-rule"></div>
         <p class="hlavicka-date">31. října 2026</p>
@@ -27,22 +27,24 @@
 <!-- ═══════════════════════ NAVIGACE ═══════════════════════ -->
 <nav class="site-nav">
     <a href="#uvod">Úvod</a>
+    <a href="#dresscode">Dresscode</a>
     <a href="#harmonogram">Harmonogram</a>
     <a href="#obrad">Obřad</a>
     <a href="#hostina">Hostina</a>
     <a href="#ubytovani">Ubytování</a>
-    <a href="#dary">Dary</a>
     <a href="#rsvp">RSVP</a>
+    <a href="#dary">Dary</a>
     <a href="#obed">Tipy</a>
+    <a href="#kontakty">Kontakty</a>
 </nav>
 
 <!-- ═══════════════════════ ÚVOD ═══════════════════════ -->
-<section id="uvod" class="section-light">
+<section id="uvod" class="section-cream">
     <div class="container">
         <div class="section-header centered">
             <h2>Vítejte</h2>
         </div>
-        <div class="uvod-split">
+        <div class="split-layout-center">
             <div style="text-align: left;">
                 <p class="lead">
                     Vítejte na našich skromných webových stránkách.</br>
@@ -51,7 +53,16 @@
                 </p>
                 <p>Moc a moc se na vás těšíme 🥨</p>
             </div>
-            <img class="uvod-photo" src="img/danda.jpg">
+            <img class="photo" style="max-height:280px" src="img/danda3.jpg">
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ DRESSCODE ═══════════════════════ -->
+<section id="dresscode" class="section-light">
+    <div class="container">
+        <div class="section-header centered">
+            <h2>Dresscode</h2>
         </div>
 
         <div class="color-palette-section">
@@ -73,8 +84,8 @@
         <div class="section-header centered">
             <h2>Harmonogram dne</h2>
         </div>
-        <div class="harmonogram-layout">
-            <img class="harmonogram-photo" src="img/oblek.jpg">
+        <div class="split-layout">
+            <img class="photo" style="max-height:480px" src="img/oblek.jpg">
             <ol class="timeline" role="list">
                 <li class="timeline-item">
                     <span class="timeline-time">11:00</span>
@@ -132,9 +143,9 @@
                     Pro hosty kostela neznalé bude připravena malá brožurka s informacemi o průběhu mše, tedy žádné obavy! Připravte se však, že si v tom kostele chvilku pobudete.
                 </p>
                 <p>
-                    Dopravit se můžete autem, autobusem (zastávka Blažovice, Pod kostelem) nebo vlakem (zastávka Blažovice).
+                    Dopravit se můžete autem, autobusem (zastávka Blažovice, Pod kostelem) nebo vlakem (stanice Blažovice).
                 </p>
-                <img class="cimrman-photo" src="img/cimrman.png">
+                <img class="photo" style="max-height:230px" src="img/cimrman.png">
                 <a class="button-outline"
                    href="https://maps.app.goo.gl/8FSg9BgJSyUyMkFm7"
                    target="_blank" rel="noopener">Otevřít v Mapách</a>
@@ -160,12 +171,12 @@
             <div style="text-align: left;">
                 <h3>Sokolovna Klobouky u Brna</h3>
                 <p>
-                    Svatební oběd a veselí bude připraveno v Sokolovně v Kloboucích u Brna.
+                    Svatební oběd a veselí bude připraveno v Sokolovně v Kloboucích u Brna. Na stejném místě bude probíhat i odpolední a večerní svatební veselí.
                 </p>
                 <p>
-                    Pokud by někdo potřeboval odvoz z Blažovic na svatební oběd, prosíme, dejte nám vědět prostřednictvím formuláře, abychom případně sehnali místo v autě.
+                    Pokud by někdo potřeboval odvoz z Blažovic na svatební oběd, prosíme, dejte nám vědět prostřednictvím formuláře, abychom případně sehnali místa v autech.
                 </p>
-                <p class="event-note">
+                <p style="font-style: italic;">
                     Kdybyste si, tak jako my, lámali hlavu nad správným skloňováním místa hostiny, poslechněte si
                     <a href="https://dvojka.rozhlas.cz/jak-spravne-sklonovat-pomnozne-nazvy-mest-co-treba-takove-valasske-klobouky-9078842"
                        target="_blank" rel="noopener">tento rozhovor</a>.
@@ -202,32 +213,8 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ SVATEBNÍ DARY ═══════════════════════ -->
-<section id="dary" class="section-cream">
-    <div class="container">
-        <div class="section-header centered">
-            <h2>Svatební dary</h2>
-        </div>
-        <div style="text-align: left;">
-            <p class="lead">
-                Celý den je jeden velký dar, když u toho budete s námi, budeme úplně nejšťastnější 🥨
-            </p>
-            <p>
-                Z hmotných darů nejvíce oceníme finanční příspěvek na náš budoucí vysněný pozemek, kde bychom mohli pást dobytek, jednoho dne snad i divější zvěř.
-            </p>
-            <p>
-                Pokud byste nám chtěli dát něco konkrétního, chtěli bychom vás poprosit o výběr z následujícího
-                seznamu. Čeká nás malý byt v Brně, do kterého se vejde jen omezený počet věcí, které bychom si rádi zvolili sami.
-            </p>
-        </div>
-        <a class="button-outline"
-           href="https://docs.google.com/spreadsheets/d/1ojWsawP2-N09dlOYIbTWuZm6ctYVDMIKLCaIe9nVbTo/edit?gid=0#gid=0"
-           target="_blank" rel="noopener">Seznam přání</a>
-    </div>
-</section>
-
 <!-- ═══════════════════════ POTVRZENÍ ÚČASTI ═══════════════════════ -->
-<section id="rsvp" class="section-light">
+<section id="rsvp" class="section-cream">
     <div class="container narrow centered">
         <h2 class="light">RSVP</h2>
     </div>
@@ -240,12 +227,39 @@
             title="RSVP formulář">
             Načítám…
         </iframe>
-        <p class="form-fallback">
-            Pokud se formulář nenačetl, potvrďte účast přes odkaz:&nbsp;
-            <a class="button-ghost"
+        <p class="form-fallback centered">
+            Pokud se vám formulář nenačetl, potvrďte prosím účast přes odkaz:&nbsp;
+            <a class="button-outline"
                href="https://forms.gle/C6evDXmHjW6FR6u38"
                target="_blank" rel="noopener">Vyplnit RSVP formulář</a>
         </p>
+    </div>
+</section>
+
+<!-- ═══════════════════════ SVATEBNÍ DARY ═══════════════════════ -->
+<section id="dary" class="section-light">
+    <div class="container">
+        <div class="split-layout">
+            <img class="photo" style="max-height:450px" src="img/my3.jpg">
+            <div>
+                <div class="section-header">
+                    <h2>Svatební dary</h2>
+                </div>
+                <p class="lead">
+                    Celý den je jeden velký dar, když u toho budete s námi, budeme úplně nejšťastnější 🥨
+                </p>
+                <p>
+                    Z hmotných darů nejvíce oceníme finanční příspěvek na náš budoucí vysněný pozemek, kde bychom mohli pást dobytek, jednoho dne snad i divější zvěř.
+                </p>
+                <p>
+                    Pokud byste nám chtěli dát něco konkrétního, chtěli bychom vás poprosit o výběr z následujícího seznamu.
+                    Čeká na nás malý byt v Brně, do kterého se vejde jen omezený počet věcí, které bychom si rádi zvolili sami.
+                </p>
+                <a class="button-outline"
+                   href="https://docs.google.com/spreadsheets/d/1ojWsawP2-N09dlOYIbTWuZm6ctYVDMIKLCaIe9nVbTo/edit?gid=0#gid=0"
+                   target="_blank" rel="noopener">Seznam přání</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -257,13 +271,12 @@
         </div>
         <div style="text-align: left;">
             <p class="lead">
-                Jakkoliv rádi bychom vás všechny pozvali na svatební oběd, není to bohužel v našich silách. Nechte nás tedy alespoň doporučit pár restaurací, se kterými máme samé dobré zkušenosti.
+                Jakkoliv rádi bychom vás všechny pozvali na svatební oběd, není to bohužel v našich silách. Dovolte nám tedy alespoň doporučit vám pár restaurací, se kterými máme samé dobré zkušenosti.
             </p>
         </div>
 
         <div class="tips-grid">
             <div class="tip-card">
-                <p class="tip-category">Na oběd</p>
                 <h3>Crazy Chefs</h3>
                 <p>Jednoznačně doporučujeme nově zrekonstruovanou hospodu na Návsi v Blažovicích.
                 Vaří různorodá jídla ze světových kuchyní, a to proklatě dobře! Původně byli nejvyhlášenější svými domácími burgery, teď už i např. Fish and Chips nebo Loaded fries.</p>
@@ -273,10 +286,8 @@
     </div>
 </section>
 
-
-
 <!-- ═══════════════════════ TIPY NA VÝLET ═══════════════════════ -->
-<section id="vylety" class="section-cream">
+<section id="vylety" class="section-light">
     <div class="container">
         <div class="section-header centered">
             <h2>Tipy na výlet</h2>
@@ -331,9 +342,9 @@
 </section>
 
 <!-- ═══════════════════════ PATIČKA ═══════════════════════ -->
-<footer>
+<footer id="kontakty">
     <p class="footer-label">Těší se na Vás:</p>
-    <img class="footer-photo" src="img/my.png">
+    <img class="photo" style="max-height:250px" src="img/my.png">
     <div class="footer-monogram">J <span>&amp;</span> D</div>
     <p>31. října 2026 · Blažovice · Klobouky u Brna</p>
 
